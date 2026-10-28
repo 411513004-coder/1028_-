@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  <title>花蓮蔬食地圖 (Hualien Veggie Map) - 綠色生活指南</title>
+  
+  <!-- Leaflet 地圖樣式庫 (開源免費，無金鑰) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  
+  <!-- 專案樣式表 -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- 頂部導航列 -->
+  <header class="navbar">
+    <div class="brand">
+      <div class="brand-icon">🌱</div>
+      <div class="brand-text">
+        <h1>花蓮蔬食地圖</h1>
+        <p>Hualien Veggie & Friendly Map · 綠色低碳生活指南</p>
+      </div>
+    </div>
+    <div class="nav-badges">
+      <span class="badge-tag">🌿 100% 開源無金鑰</span>
+      <span class="badge-tag">📍 花蓮在地精選</span>
+    </div>
+  </header>
+
+  <!-- 條件篩選與搜尋列 -->
+  <section class="filter-bar">
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInput" placeholder="搜尋餐廳名、特色招牌（如：蒲燒鰻、臭豆腐）或地址...">
+    </div>
+
+    <!-- 飲食分類快選 -->
+    <div class="filter-categories">
+      <button class="filter-btn active" data-category="全部">全部店家</button>
+      <button class="filter-btn" data-category="全素">🌱 全素 / 純素</button>
+      <button class="filter-btn" data-category="蛋奶素">🥚 蛋奶素</button>
+      <button class="filter-btn" data-category="蔬食友善">🥗 蔬食友善</button>
+    </div>
+
+    <!-- 地區鄉鎮下拉選單 -->
+    <select id="townSelect" class="town-select">
+      <option value="全部">📍 全部行政區</option>
+      <option value="花蓮市">花蓮市</option>
+      <option value="吉安鄉">吉安鄉</option>
+      <option value="壽豐鄉">壽豐鄉</option>
+      <option value="新城鄉">新城鄉</option>
+      <option value="鳳林鎮">鳳林鎮</option>
+    </select>
+
+    <!-- 重置按鈕 -->
+    <button id="resetBtn" class="reset-btn">↺ 重設條件</button>
+  </section>
+
+  <!-- 主視覺雙欄區域 -->
+  <main class="main-container">
+    
+    <!-- 左側店家清單 -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <span class="sidebar-title" id="resultCount">載入中...</span>
+        <span style="font-size: 0.75rem; color: #94a3b8;">點擊卡片可快速定位</span>
+      </div>
+      <div class="restaurant-list" id="restaurantList">
+        <!-- 由 JS 動態生成店家卡片 -->
+      </div>
+    </aside>
+
+    <!-- 右側互動地圖 -->
+    <section class="map-container">
+      <div id="map"></div>
+      
+      <!-- 手機版切換按鈕 -->
+      <button id="mobileToggleBtn" class="mobile-toggle-btn">
+        📋 查看店家清單
+      </button>
+    </section>
+
+  </main>
+
+  <!-- 引入 Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  
+  <!-- 引入店家資料與互動邏輯 -->
+  <script src="data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

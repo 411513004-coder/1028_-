@@ -1,0 +1,13 @@
+# 系統與編輯器暫存
+.DS_Store
+Thumbs.db
+*.swp
+*.log
+.vscode/
+.idea/
+
+# 敏感金鑰防護 (雖然本專案無金鑰，但依資安最佳實踐配置)
+.env
+*.key
+*.pem
+credentials.json
