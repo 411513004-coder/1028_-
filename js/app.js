@@ -30,16 +30,16 @@ function initMap() {
     zoomControl: true
   });
 
-  // 主底圖：Esri 世界街道圖 (高解析、全球高速 CDN、100% 免金鑰、穩定不收費)
+  // 主底圖：Esri 世界街道圖 (全球 CDN、最高支援到 19 級高解析街道圖、完全免金鑰)
   const esriStreets = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", {
-    attribution: 'Tiles &copy; Esri &mdash; 國土測繪圖資 | 花蓮探索地圖',
+    attribution: 'Tiles &copy; Esri &mdash; 國土測繪圖資 | 花蓮生活探索地圖',
     maxZoom: 19
   });
 
-  // 備用底圖：Esri 國家地理典雅地形圖 (色彩溫和柔美，極度適合台灣山海地形與觀光地圖)
-  const esriNatGeo = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}", {
-    attribution: 'Tiles &copy; Esri &mdash; National Geographic Society',
-    maxZoom: 16
+  // 備用底圖：Esri 高解析真實衛星影像圖 (包含山海、海岸線與城市航照，拉近清晰度極高)
+  const esriImagery = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", {
+    attribution: 'Tiles &copy; Esri, Maxar, Earthstar Geographics',
+    maxZoom: 19
   });
 
   // 預設載入穩定且清晰的 Esri 街道圖
@@ -47,7 +47,7 @@ function initMap() {
 
   const baseMaps = {
     "🗺️ 經典街道圖 (推薦)": esriStreets,
-    "🏞️ 典雅地形圖": esriNatGeo
+    "🛰️ 高解析衛星航照": esriImagery
   };
   L.control.layers(baseMaps, null, { position: "topright" }).addTo(map);
 }
