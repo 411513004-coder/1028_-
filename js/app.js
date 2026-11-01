@@ -30,24 +30,24 @@ function initMap() {
     zoomControl: true
   });
 
-  // CARTO Voyager 免費開源圖資 (無金鑰、不擋本機檔案)
-  const cartoVoyager = L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a> | 花蓮探索地圖',
-    subdomains: 'abcd',
-    maxZoom: 20
-  });
-
-  // 備用圖層：Esri 世界街道圖
+  // 主底圖：Esri 世界街道圖 (高解析、全球高速 CDN、100% 免金鑰、穩定不收費)
   const esriStreets = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", {
-    attribution: 'Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ',
+    attribution: 'Tiles &copy; Esri &mdash; 國土測繪圖資 | 花蓮探索地圖',
     maxZoom: 19
   });
 
-  cartoVoyager.addTo(map);
+  // 備用底圖：Esri 國家地理典雅地形圖 (色彩溫和柔美，極度適合台灣山海地形與觀光地圖)
+  const esriNatGeo = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}", {
+    attribution: 'Tiles &copy; Esri &mdash; National Geographic Society',
+    maxZoom: 16
+  });
+
+  // 預設載入穩定且清晰的 Esri 街道圖
+  esriStreets.addTo(map);
 
   const baseMaps = {
-    "🌿 清新探訪風 (推薦)": cartoVoyager,
-    "🗺️ 經典街道圖": esriStreets
+    "🗺️ 經典街道圖 (推薦)": esriStreets,
+    "🏞️ 典雅地形圖": esriNatGeo
   };
   L.control.layers(baseMaps, null, { position: "topright" }).addTo(map);
 }
