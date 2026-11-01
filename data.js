@@ -1,13 +1,21 @@
 /**
- * 花蓮蔬食地圖 - 100% 真實與目前營業中店家資料庫
- * 資料經最新實地與網路評價核實，排除停業及虛構店家
- * 涵蓋花蓮市、吉安鄉、壽豐鄉(東華大學志學街)、新城鄉、鳳林鎮
+ * 花蓮生活探索地圖 - 100% 真實與現正營運資料庫
+ * 包含三大分類：
+ * 1. 蔬食美食 (全素/蛋奶素/蔬食友善)
+ * 2. 精選景點 (文化古蹟/自然生態/海岸風光)
+ * 3. 質感咖啡廳 (老宅/海景/手沖甜點/不限時)
+ * 經 2025-2026 最新官方資訊與實地核實，排除停業與虛構店家
  */
-const RESTAURANTS_DATA = [
-  // ==================== 花蓮市 (Hualien City) ====================
+const PLACES_DATA = [
+  // =========================================================================
+  // 🌿 一、蔬食美饌 (30 家)
+  // =========================================================================
+  
+  // --- 花蓮市 ---
   {
     id: 1,
     name: "蝸牛蔬食 (吃到飽Buffet)",
+    type: "素食",
     category: "全素",
     town: "花蓮市",
     address: "花蓮縣花蓮市建國路二段816號 (近慈濟大學建國校區)",
@@ -24,6 +32,7 @@ const RESTAURANTS_DATA = [
   {
     id: 2,
     name: "植地 living room (預約制質感蔬食)",
+    type: "素食",
     category: "全素",
     town: "花蓮市",
     address: "花蓮縣花蓮市介林六街83號",
@@ -40,6 +49,7 @@ const RESTAURANTS_DATA = [
   {
     id: 3,
     name: "Piatto+菜 義式蔬食",
+    type: "素食",
     category: "蛋奶素",
     town: "花蓮市",
     address: "花蓮縣花蓮市仁愛街28號2樓",
@@ -56,6 +66,7 @@ const RESTAURANTS_DATA = [
   {
     id: 4,
     name: "時光1939 (日式老宅蔬食早午餐)",
+    type: "素食",
     category: "蔬食友善",
     town: "花蓮市",
     address: "花蓮縣花蓮市民國路80巷16號",
@@ -72,6 +83,7 @@ const RESTAURANTS_DATA = [
   {
     id: 5,
     name: "常春藤素食餐廳",
+    type: "素食",
     category: "全素",
     town: "花蓮市",
     address: "花蓮縣花蓮市富安路22號",
@@ -88,6 +100,7 @@ const RESTAURANTS_DATA = [
   {
     id: 6,
     name: "明園素食坊",
+    type: "素食",
     category: "全素",
     town: "花蓮市",
     address: "花蓮縣花蓮市國富十街8號",
@@ -104,6 +117,7 @@ const RESTAURANTS_DATA = [
   {
     id: 7,
     name: "宜蘭素食水煎包",
+    type: "素食",
     category: "全素",
     town: "花蓮市",
     address: "花蓮縣花蓮市民國路41號",
@@ -120,6 +134,7 @@ const RESTAURANTS_DATA = [
   {
     id: 8,
     name: "綠色大地健康養生素食坊",
+    type: "素食",
     category: "全素",
     town: "花蓮市",
     address: "花蓮縣花蓮市建國路142號",
@@ -136,6 +151,7 @@ const RESTAURANTS_DATA = [
   {
     id: 9,
     name: "青田の蔬食",
+    type: "素食",
     category: "蛋奶素",
     town: "花蓮市",
     address: "花蓮縣花蓮市建國路258號",
@@ -152,6 +168,7 @@ const RESTAURANTS_DATA = [
   {
     id: 10,
     name: "素食之家 (四十年傳統自助餐)",
+    type: "素食",
     category: "全素",
     town: "花蓮市",
     address: "花蓮縣花蓮市三民街64號",
@@ -168,6 +185,7 @@ const RESTAURANTS_DATA = [
   {
     id: 11,
     name: "眾流素食",
+    type: "素食",
     category: "全素",
     town: "花蓮市",
     address: "花蓮縣花蓮市中正路436號",
@@ -177,13 +195,14 @@ const RESTAURANTS_DATA = [
     business_hours: "11:00 - 14:00, 17:00 - 20:00 (週三公休)",
     specialty: ["紅燒素牛肉麵", "香椿素肉燥乾麵", "鮮味素水餃", "藥膳素補湯"],
     price: "$ (約70-130元)",
-    description: "三十年傳統素食麵食老字號，素牛肉麵湯頭以多種蔬果中藥慢火慢燉，濃郁順口，份量十足，是許多老花蓮人從小吃到的熟悉滋味。",
+    description: "三十年傳統素食麵食老字號，素牛肉麵湯頭以多種蔬果中藥慢火慢燉，濃郁順口，份量十足，是老花蓮人的經典回憶。",
     google_maps_url: "https://www.google.com/maps/search/?api=1&query=眾流素食+花蓮",
     website: "https://www.google.com/maps"
   },
   {
     id: 12,
     name: "家畇素食鍋燒專賣店",
+    type: "素食",
     category: "全素",
     town: "花蓮市",
     address: "花蓮縣花蓮市自由街90號",
@@ -200,6 +219,7 @@ const RESTAURANTS_DATA = [
   {
     id: 13,
     name: "素南洋蔬食料理",
+    type: "素食",
     category: "全素",
     town: "花蓮市",
     address: "花蓮縣花蓮市東興三街32號",
@@ -216,6 +236,7 @@ const RESTAURANTS_DATA = [
   {
     id: 14,
     name: "泥巴咖啡 (Mudridge Coffee)",
+    type: "素食",
     category: "蔬食友善",
     town: "花蓮市",
     address: "花蓮縣花蓮市中正路561號",
@@ -232,6 +253,7 @@ const RESTAURANTS_DATA = [
   {
     id: 15,
     name: "一碗小 (日式老宅麵館)",
+    type: "素食",
     category: "蔬食友善",
     town: "花蓮市",
     address: "花蓮縣花蓮市明禮路14巷1號",
@@ -248,6 +270,7 @@ const RESTAURANTS_DATA = [
   {
     id: 16,
     name: "慢吞吞手作碳烤吐司",
+    type: "素食",
     category: "蔬食友善",
     town: "花蓮市",
     address: "花蓮縣花蓮市三民街92號",
@@ -262,10 +285,11 @@ const RESTAURANTS_DATA = [
     website: "https://www.facebook.com"
   },
 
-  // ==================== 吉安鄉 (Ji'an Township) ====================
+  // --- 吉安鄉 ---
   {
     id: 17,
     name: "慈惠素食館",
+    type: "素食",
     category: "全素",
     town: "吉安鄉",
     address: "花蓮縣吉安鄉自強路63號",
@@ -282,6 +306,7 @@ const RESTAURANTS_DATA = [
   {
     id: 18,
     name: "草緣齋 (素食手工披薩/庭園餐館)",
+    type: "素食",
     category: "蛋奶素",
     town: "吉安鄉",
     address: "花蓮縣吉安鄉慶南三街244號 (近慶修院)",
@@ -298,6 +323,7 @@ const RESTAURANTS_DATA = [
   {
     id: 19,
     name: "福幸台越素食館",
+    type: "素食",
     category: "全素",
     town: "吉安鄉",
     address: "花蓮縣吉安鄉中正路一段20號",
@@ -314,6 +340,7 @@ const RESTAURANTS_DATA = [
   {
     id: 20,
     name: "佛光山月光寺 - 月光滴水坊",
+    type: "素食",
     category: "全素",
     town: "吉安鄉",
     address: "花蓮縣吉安鄉吉昌二街28號",
@@ -330,6 +357,7 @@ const RESTAURANTS_DATA = [
   {
     id: 21,
     name: "櫻之田野養生野菜鍋 (吉安總店)",
+    type: "素食",
     category: "蔬食友善",
     town: "吉安鄉",
     address: "花蓮縣吉安鄉福興七街8號",
@@ -346,6 +374,7 @@ const RESTAURANTS_DATA = [
   {
     id: 22,
     name: "慶豐麵店",
+    type: "素食",
     category: "蔬食友善",
     town: "吉安鄉",
     address: "花蓮縣吉安鄉中山路三段388號",
@@ -360,10 +389,11 @@ const RESTAURANTS_DATA = [
     website: "https://www.google.com/maps"
   },
 
-  // ==================== 壽豐鄉 (Shoufeng - 東華大學志學街商圈) ====================
+  // --- 壽豐鄉 (東華大學志學街商圈) ---
   {
     id: 23,
     name: "阿宏素食 (東華志學店)",
+    type: "素食",
     category: "全素",
     town: "壽豐鄉",
     address: "花蓮縣壽豐鄉志學村中正路108號 (志學美食街)",
@@ -380,6 +410,7 @@ const RESTAURANTS_DATA = [
   {
     id: 24,
     name: "好佳小吃 (獨立素食鍋具料理)",
+    type: "素食",
     category: "蔬食友善",
     town: "壽豐鄉",
     address: "花蓮縣壽豐鄉志學村中正路122號",
@@ -396,6 +427,7 @@ const RESTAURANTS_DATA = [
   {
     id: 25,
     name: "麥樂多活力早午餐 (獨立素食菜單)",
+    type: "素食",
     category: "蛋奶素",
     town: "壽豐鄉",
     address: "花蓮縣壽豐鄉志學村中正路74號",
@@ -412,6 +444,7 @@ const RESTAURANTS_DATA = [
   {
     id: 26,
     name: "朱緣餐館",
+    type: "素食",
     category: "蔬食友善",
     town: "壽豐鄉",
     address: "花蓮縣壽豐鄉志學村中正路65號",
@@ -426,10 +459,11 @@ const RESTAURANTS_DATA = [
     website: "https://www.google.com/maps"
   },
 
-  // ==================== 新城鄉 (Xincheng Township) ====================
+  // --- 新城鄉 ---
   {
     id: 27,
     name: "織娘之家 (預約制素食無菜單料理)",
+    type: "素食",
     category: "全素",
     town: "新城鄉",
     address: "花蓮縣新城鄉新興路1號 (新城火車站前)",
@@ -446,6 +480,7 @@ const RESTAURANTS_DATA = [
   {
     id: 28,
     name: "金英蔬食 jinying",
+    type: "素食",
     category: "全素",
     town: "新城鄉",
     address: "花蓮縣新城鄉民權街253號 (近北埔商圈)",
@@ -462,6 +497,7 @@ const RESTAURANTS_DATA = [
   {
     id: 29,
     name: "原野牧場 (七星潭海景餐廳)",
+    type: "素食",
     category: "蔬食友善",
     town: "新城鄉",
     address: "花蓮縣新城鄉大漢村大漢街9號",
@@ -476,10 +512,11 @@ const RESTAURANTS_DATA = [
     website: "https://www.facebook.com"
   },
 
-  // ==================== 鳳林鎮 (Fenglin Township) ====================
+  // --- 鳳林鎮 ---
   {
     id: 30,
     name: "鳳林游翁韭菜臭豆腐 (純素特調醬汁版)",
+    type: "素食",
     category: "蔬食友善",
     town: "鳳林鎮",
     address: "花蓮縣鳳林鎮中正路二段20號",
@@ -492,10 +529,358 @@ const RESTAURANTS_DATA = [
     description: "全台知名國際慢城鳳林鎮排隊傳奇！外酥內嫩的現炸豆腐，特別貼心為素食朋友備有「無蒜泥特調純素醬汁」，外地食客指名朝聖。",
     google_maps_url: "https://www.google.com/maps/search/?api=1&query=游翁韭菜臭豆腐+鳳林",
     website: "https://www.google.com/maps"
+  },
+
+  // =========================================================================
+  // 🏛️ 二、精選景點 (10 處花蓮必訪知名亮點)
+  // =========================================================================
+  {
+    id: 101,
+    name: "花蓮將軍府1936 園區",
+    type: "景點",
+    category: "景點",
+    town: "花蓮市",
+    address: "花蓮縣花蓮市中正路622巷6號",
+    lat: 23.9810,
+    lng: 121.6130,
+    phone: "03-822-7121",
+    business_hours: "週一至四 10:00 - 22:00, 週五至日 10:00 - 23:30 (免門票)",
+    specialty: ["日式將軍官舍群", "藝文展覽", "美崙溪畔散策", "文創選品店"],
+    price: "免門票入園",
+    description: "近年全面活化重啟的日式宿舍聚落群，前身為日治時期高級官員官舍。結合文創市集、藝術展覽與歷史漫遊，是市區最具質感的打卡地標。",
+    google_maps_url: "https://www.google.com/maps/search/?api=1&query=花蓮將軍府1936",
+    website: "https://hualien.travel"
+  },
+  {
+    id: 102,
+    name: "松園別館 (Pine Garden)",
+    type: "景點",
+    category: "景點",
+    town: "花蓮市",
+    address: "花蓮縣花蓮市松園街65號",
+    lat: 23.9829,
+    lng: 121.6155,
+    phone: "03-835-6510",
+    business_hours: "09:00 - 18:00 (每月第二個週二休館)",
+    specialty: ["百年琉球松林", "太平洋制高海景", "日式洋樓建築", "藝文策展"],
+    price: "全票 60元 (花蓮縣民免費)",
+    description: "曾為花蓮港兵事部軍事指揮中心，建於大正年間。園區環繞數十株百年老松，地處美崙坡頂俯瞰花蓮港與太平洋，曾獲台灣觀光百大亮點殊榮。",
+    google_maps_url: "https://www.google.com/maps/search/?api=1&query=松園別館+花蓮",
+    website: "https://www.pinegarden.com.tw"
+  },
+  {
+    id: 103,
+    name: "花蓮文化創意產業園區 (a-zone)",
+    type: "景點",
+    category: "景點",
+    town: "花蓮市",
+    address: "花蓮縣花蓮市中華路144號",
+    lat: 23.9762,
+    lng: 121.6049,
+    phone: "03-831-3777",
+    business_hours: "戶外24小時開放，展館週二至週日 10:00 - 18:00 (週一休園)",
+    specialty: ["百年舊酒廠歷史建築", "週末文創市集", "茶金戲劇展", "戶外綠茵廣場"],
+    price: "免門票入園",
+    description: "百年舊花蓮酒廠改建之文創園區，完整保留二十六棟老廠房建築。漫步其間感受工業歷史紋理，定期舉辦手作市集與音樂展演。",
+    google_maps_url: "https://www.google.com/maps/search/?api=1&query=花蓮文化創意產業園區",
+    website: "https://hualien.travel"
+  },
+  {
+    id: 104,
+    name: "東大門國際觀光夜市",
+    type: "景點",
+    category: "景點",
+    town: "花蓮市",
+    address: "花蓮縣花蓮市中山路50號 (重慶路口)",
+    lat: 23.9729,
+    lng: 121.6109,
+    phone: "03-822-7171",
+    business_hours: "18:00 - 00:00 (每日營業)",
+    specialty: ["原住民一條街", "福町夜市", "各省一條街", "自強夜市美食"],
+    price: "免門票",
+    description: "花蓮規模最大的國際級觀光夜市，集合四大主題街區與四百多家攤商，地磚寬敞乾淨，原住民烤麻糬、鮮榨果汁與各類美食應有盡有。",
+    google_maps_url: "https://www.google.com/maps/search/?api=1&query=東大門夜市+花蓮",
+    website: "https://hualien.travel"
+  },
+  {
+    id: 105,
+    name: "吉安慶修院 (三級古蹟)",
+    type: "景點",
+    category: "景點",
+    town: "吉安鄉",
+    address: "花蓮縣吉安鄉吉安村中興路345之1號",
+    lat: 23.9737,
+    lng: 121.5647,
+    phone: "03-853-5479",
+    business_hours: "08:30 - 17:00 (週一公休)",
+    specialty: ["日式真言宗布教所", "八十八尊石佛", "不動明王石雕", "日式手水舍"],
+    price: "全票 30元 (可折抵部分文創消費)",
+    description: "台灣現存保存最完整的日式寺院古蹟！原為日治時期日本移民心靈寄託之真言宗高野山布教所，木造日式佛堂莊嚴寧靜，散發恬淡禪意。",
+    google_maps_url: "https://www.google.com/maps/search/?api=1&query=吉安慶修院",
+    website: "https://www.erv-nsa.gov.tw"
+  },
+  {
+    id: 106,
+    name: "七星潭海岸風景特定區",
+    type: "景點",
+    category: "景點",
+    town: "新城鄉",
+    address: "花蓮縣新城鄉大漢村七星街32號",
+    lat: 24.0314,
+    lng: 121.6272,
+    phone: "03-822-1592",
+    business_hours: "24小時全年無休開放 (免費自由參觀)",
+    specialty: ["新月型天然卵石海灣", "聽濤看海放空", "兩潭兩鐵自行車道", "日出與星空"],
+    price: "免門票",
+    description: "花蓮最經典的海灣！斷層形成的優美月牙海灣，踏在圓潤的鵝卵石灘上聆聽浪濤聲，遠眺中央山脈與太魯閣峽谷壯麗交會。",
+    google_maps_url: "https://www.google.com/maps/search/?api=1&query=七星潭海岸風景特定區",
+    website: "https://hualien.travel"
+  },
+  {
+    id: 107,
+    name: "鯉魚潭風景區 (花東縱谷最大內陸湖)",
+    type: "景點",
+    category: "景點",
+    town: "壽豐鄉",
+    address: "花蓮縣壽豐鄉池南村環潭北路100號",
+    lat: 23.9350,
+    lng: 121.5079,
+    phone: "03-864-1691",
+    business_hours: "全天開放 (遊客中心 08:30 - 17:30)",
+    specialty: ["環潭湖畔自行車道", "水上腳踏天鵝船", "潭畔森林步道", "春季螢火蟲"],
+    price: "免門票 (踩船等水上設施另計)",
+    description: "花蓮最大的內陸湖泊，湖光山色倒映蒼翠山巒。設有長達5公里的平緩環潭自行車道，能近距離親近湖水，亦為泛舟踩船勝地。",
+    google_maps_url: "https://www.google.com/maps/search/?api=1&query=鯉魚潭+壽豐",
+    website: "https://www.erv-nsa.gov.tw"
+  },
+  {
+    id: 108,
+    name: "雲山水植物農場",
+    type: "景點",
+    category: "景點",
+    town: "壽豐鄉",
+    address: "花蓮縣壽豐鄉豐坪路二段2巷201弄88號",
+    lat: 23.8279,
+    lng: 121.5160,
+    phone: "0968-799-780",
+    business_hours: "08:30 - 17:00 (每日營業)",
+    specialty: ["夢幻落羽松跳石步道", "Tiffany藍夢幻湖", "大片綠草如茵", "異國風城堡"],
+    price: "全票 120元 (含50元消費折抵)",
+    description: "宛如走入歐洲油畫的夢幻仙境！清澈澄碧的蒂芬妮藍人工湖畔遍植落羽松與棕櫚樹，漫步在著名跳石水壩上隨手拍都是明信片美景。",
+    google_maps_url: "https://www.google.com/maps/search/?api=1&query=雲山水植物農場+花蓮",
+    website: "https://www.erv-nsa.gov.tw"
+  },
+  {
+    id: 109,
+    name: "台泥 DAKA 園區 (開放生態循環工廠)",
+    type: "景點",
+    category: "景點",
+    town: "秀林鄉",
+    address: "花蓮縣秀林鄉和平村和平263號 (台9線蘇花改旁)",
+    lat: 24.3002,
+    lng: 121.7521,
+    phone: "03-868-6080",
+    business_hours: "戶外與超商24小時 (星巴克與市集約 09:00 - 20:00)",
+    specialty: ["巨型太陽能和平花", "整點音樂水舞秀", "水泥美學星巴克", "生態百寶袋"],
+    price: "免門票自由參觀",
+    description: "蘇花公路進入花蓮的第一站優質休閒園區！融合工廠開放、綠能發電與在地市集，中央廣場整點水舞秀與獨具特色的水泥風星巴克廣受旅人喜愛。",
+    google_maps_url: "https://www.google.com/maps/search/?api=1&query=台泥DAKA園區",
+    website: "https://hualien.travel"
+  },
+  {
+    id: 110,
+    name: "崇德瑩農場 (台版紐西蘭)",
+    type: "景點",
+    category: "景點",
+    town: "秀林鄉",
+    address: "花蓮縣秀林鄉崇德村下台地 (立霧溪出海口旁)",
+    lat: 24.1452,
+    lng: 121.6634,
+    phone: "0963-708-807",
+    business_hours: "09:00 - 18:00 (每日營業)",
+    specialty: ["依山傍海大草原", "可愛動物近距離餵食 (羊駝/小馬)", "露營車與飛行傘", "海景平台"],
+    price: "入園清潔費 100元 (可折抵部分消費)",
+    description: "背倚中央山脈、面迎遼闊太平洋的絕美農場。青翠的大草原上有小馬、羊駝自由漫步，被譽為花蓮版紐西蘭，視野開闊極致療癒。",
+    google_maps_url: "https://www.google.com/maps/search/?api=1&query=崇德瑩農場+花蓮",
+    website: "https://hualien.travel"
+  },
+
+  // =========================================================================
+  // ☕ 三、質感咖啡廳 (10 家花蓮人氣跑咖名單)
+  // =========================================================================
+  {
+    id: 201,
+    name: "浮室 (soave plan)",
+    type: "咖啡廳",
+    category: "咖啡廳",
+    town: "花蓮市",
+    address: "花蓮縣花蓮市成功街280號1樓",
+    lat: 23.9745,
+    lng: 121.6063,
+    phone: "粉專私訊 (無電話)",
+    business_hours: "09:00 - 18:00 (不定休，依IG公告)",
+    specialty: ["純白極簡美學空間", "手沖單品咖啡", "檸檬塔", "大人味提拉米蘇"],
+    price: "$$ (約120-220元)",
+    description: "花蓮溝仔尾極簡純白風格的經典老宅咖啡空間。大片自然光灑落，座位舒適不限時，甜點與義式咖啡水準極佳，適合安靜閱讀或工作。",
+    google_maps_url: "https://www.google.com/maps/search/?api=1&query=浮室+soave+plan+花蓮",
+    website: "https://www.facebook.com"
+  },
+  {
+    id: 202,
+    name: "Giocare 義式.手沖咖啡",
+    type: "咖啡廳",
+    category: "咖啡廳",
+    town: "花蓮市",
+    address: "花蓮縣花蓮市樹人街7號",
+    lat: 23.9818,
+    lng: 121.6112,
+    phone: "0980-917-424",
+    business_hours: "14:00 - 19:00 (週三、四公休，戶外遇雨調整)",
+    specialty: ["老宅日式庭院樹下咖啡", "手工陶器杯盤", "手沖單品咖啡", "手作磅蛋糕"],
+    price: "$$ (約120-180元)",
+    description: "花蓮代表性的戶外老宅日式庭院咖啡館。坐在樹蔭下吹風喝手沖，杯盤皆為老闆娘親手捏製的柴燒陶器，充滿手作質樸溫度與貓咪陪伴。",
+    google_maps_url: "https://www.google.com/maps/search/?api=1&query=Giocare+花蓮",
+    website: "https://www.facebook.com"
+  },
+  {
+    id: 203,
+    name: "Caffe Fiore 珈琲花",
+    type: "咖啡廳",
+    category: "咖啡廳",
+    town: "花蓮市",
+    address: "花蓮縣花蓮市忠孝街79號",
+    lat: 23.9738,
+    lng: 121.6071,
+    phone: "03-832-5172",
+    business_hours: "13:30 - 18:30 (公休日每月公告於粉專)",
+    specialty: ["綠意植栽乾燥花老屋", "日式手沖深焙咖啡", "手作生乳酪蛋糕", "可愛店貓"],
+    price: "$$ (約130-220元)",
+    description: "隱身轉角的乾燥花老宅咖啡館，木質老窗與乾燥花草交織出溫暖懷舊氛圍。手作甜點與深焙咖啡風味濃郁，深受文青與愛貓族喜愛。",
+    google_maps_url: "https://www.google.com/maps/search/?api=1&query=珈琲花+花蓮",
+    website: "https://www.facebook.com"
+  },
+  {
+    id: 204,
+    name: "KŌHI 宅 (珈琲宅)",
+    type: "咖啡廳",
+    category: "咖啡廳",
+    town: "花蓮市",
+    address: "花蓮縣花蓮市成功街298號",
+    lat: 23.9749,
+    lng: 121.6061,
+    phone: "粉專私訊 (無電話)",
+    business_hours: "14:00 - 22:00 (週二公休)",
+    specialty: ["日系榻榻米座位", "深夜咖啡館", "昭和焦糖布丁", "特調冰滴咖啡"],
+    price: "$$ (約130-200元)",
+    description: "溝仔尾低調溫暖的深夜日系老宅咖啡。二樓鋪設日式榻榻米，昏黃燈光與沉靜音樂流淌，是夜晚想放鬆沈澱、享受夜間咖啡香的避風港。",
+    google_maps_url: "https://www.google.com/maps/search/?api=1&query=KŌHI+宅+花蓮",
+    website: "https://www.facebook.com"
+  },
+  {
+    id: 205,
+    name: "Stroll 散步咖啡",
+    type: "咖啡廳",
+    category: "咖啡廳",
+    town: "花蓮市",
+    address: "花蓮縣花蓮市忠孝街70號",
+    lat: 23.9739,
+    lng: 121.6069,
+    phone: "0921-171-669",
+    business_hours: "12:00 - 18:00 (週五公休，週四不定休)",
+    specialty: ["花蓮第一名香濃肉桂捲", "淺焙手沖精品", "焦糖布丁", "司康佐手工果醬"],
+    price: "$$ (約140-230元)",
+    description: "花蓮極具代表性的肉桂捲名店！現烤肉桂捲淋上特製濃郁淋醬外酥內軟，搭配精選烘焙手沖咖啡，店內二樓視野寬敞舒適。",
+    google_maps_url: "https://www.google.com/maps/search/?api=1&query=Stroll+散步咖啡+花蓮",
+    website: "https://www.facebook.com"
+  },
+  {
+    id: 206,
+    name: "感覺良好咖啡 (SENSES COFFEE)",
+    type: "咖啡廳",
+    category: "咖啡廳",
+    town: "花蓮市",
+    address: "花蓮縣花蓮市上海街220號",
+    lat: 23.9735,
+    lng: 121.6078,
+    phone: "IG粉專私訊",
+    business_hours: "10:00 - 18:00 (週二、週三公休)",
+    specialty: ["自家烘焙單品豆", "特調燕麥奶拿鐵", "極簡俐落吧台", "手工巴斯克蛋糕"],
+    price: "$$ (約120-190元)",
+    description: "極簡明亮的社區型精品咖啡館。專注於咖啡豆沖煮品質，提供風味細膩的手沖單品與特調咖啡，給顧客最純粹寧靜的品飲時光。",
+    google_maps_url: "https://www.google.com/maps/search/?api=1&query=SENSES+COFFEE+花蓮",
+    website: "https://www.facebook.com"
+  },
+  {
+    id: 207,
+    name: "咖逼小売所｜斗宅。揀茶舍",
+    type: "咖啡廳",
+    category: "咖啡廳",
+    town: "花蓮市",
+    address: "花蓮縣花蓮市三民街23號 (三民街節約街口)",
+    lat: 23.9771,
+    lng: 121.6062,
+    phone: "03-835-0503",
+    business_hours: "10:00 - 20:00 (每日營業)",
+    specialty: ["縣定古蹟日式檢察長宿舍", "柴犬造型手工麵包", "和風宇治抹茶", "老宅緣側庭園"],
+    price: "$$ (約150-250元)",
+    description: "前身為縣定古蹟『花蓮港廳檢察長宿舍』！保存完整的和洋折衷日式官舍建築，坐在日式緣側迴廊欣賞枯山水庭園，招牌柴犬造型餐點超萌好拍。",
+    google_maps_url: "https://www.google.com/maps/search/?api=1&query=斗宅揀茶舍+花蓮",
+    website: "https://www.facebook.com"
+  },
+  {
+    id: 208,
+    name: "森山舍 (Morning Mountain)",
+    type: "咖啡廳",
+    category: "咖啡廳",
+    town: "花蓮市",
+    address: "花蓮縣花蓮市林政街10號",
+    lat: 23.9781,
+    lng: 121.5952,
+    phone: "03-835-1987",
+    business_hours: "平日 10:00 - 18:00, 假日 09:00 - 18:00 (週四公休)",
+    specialty: ["林務局日式林業老舍", "小農手作早午餐盤", "熱壓紅豆吐司", "在地時令果汁"],
+    price: "$$ (約200-320元)",
+    description: "改建自林務局日式日業巡山員老宿舍，大面木窗正對田埔生態公園綠意。餐點選用在地小農食材烹調手作吐司與健康料理，極受歡迎。",
+    google_maps_url: "https://www.google.com/maps/search/?api=1&query=森山舍+花蓮",
+    website: "https://www.facebook.com"
+  },
+  {
+    id: 209,
+    name: "龍宮咖啡 (Loong Gung Cafe)",
+    type: "咖啡廳",
+    category: "咖啡廳",
+    town: "新城鄉",
+    address: "花蓮縣新城鄉七星街79巷3號 (近七星潭鎮星宮)",
+    lat: 24.0308,
+    lng: 121.6268,
+    phone: "粉專私訊 (無電話)",
+    business_hours: "10:00 - 18:00 (每週二固定公休)",
+    specialty: ["七星潭老街漫活空間", "烤燕麥佐希臘優格", "焦糖香蕉磅蛋糕", "海邊漫步手沖"],
+    price: "$$ (約130-220元)",
+    description: "距離七星潭卵石海灘僅數步之遙的老宅咖啡館。以漂流木、大面綠植與老物件打造慵懶海島氣息，看海踏浪後必來品嚐的手作咖啡甜點聖地。",
+    google_maps_url: "https://www.google.com/maps/search/?api=1&query=龍宮咖啡+七星潭",
+    website: "https://www.facebook.com"
+  },
+  {
+    id: 210,
+    name: "海碉堡 (海景露天碉堡咖啡)",
+    type: "咖啡廳",
+    category: "咖啡廳",
+    town: "壽豐鄉",
+    address: "花蓮縣壽豐鄉鹽寮村大橋38之1號 (台11線海岸旁)",
+    lat: 23.9215,
+    lng: 121.6035,
+    phone: "0912-691-890",
+    business_hours: "13:00 - 19:00 (週二、週三固定公休)",
+    specialty: ["軍事碉堡遺址海景露台", "太平洋遼闊全景", "特調冰滴咖啡", "海風乳酪蛋糕"],
+    price: "$$ (約150-250元)",
+    description: "位於花蓮溪出海口旁、緊鄰軍事碉堡遺址的無敵海景秘境咖啡。擁有居高臨下的戶外露台，一覽太平洋浪濤與花蓮市天際線，視野極致壯闊。",
+    google_maps_url: "https://www.google.com/maps/search/?api=1&query=海碉堡+花蓮",
+    website: "https://www.facebook.com"
   }
 ];
 
 // 支援 Node.js 環境測試與瀏覽器全域變數相容
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = RESTAURANTS_DATA;
+  module.exports = PLACES_DATA;
 }

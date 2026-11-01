@@ -1,4 +1,4 @@
-/* 花蓮蔬食地圖 - 現代化清新風格樣式 */
+/* 花蓮生活地圖 - 現代化清新風格樣式 */
 :root {
   --primary: #10b981;
   --primary-dark: #059669;
@@ -6,6 +6,8 @@
   --vegan-color: #10b981;
   --lacto-color: #f59e0b;
   --friendly-color: #0284c7;
+  --spot-color: #8b5cf6;
+  --cafe-color: #d97706;
   --bg-color: #f8fafc;
   --surface-color: #ffffff;
   --text-main: #1e293b;
@@ -39,7 +41,7 @@ body {
 .navbar {
   background: var(--surface-color);
   border-bottom: 1px solid var(--border-color);
-  padding: 12px 20px;
+  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -54,15 +56,16 @@ body {
 }
 
 .brand-icon {
-  width: 40px;
-  height: 40px;
-  background: var(--primary-light);
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, #ecfdf5, #ede9fe);
   color: var(--primary-dark);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 24px;
+  border: 1px solid #d1fae5;
 }
 
 .brand-text h1 {
@@ -93,7 +96,45 @@ body {
   border: 1px solid rgba(16, 185, 129, 0.3);
 }
 
-/* 控制篩選列 */
+/* 大分類導航切換 (頁籤 Tab) */
+.type-tabs {
+  background: #f1f5f9;
+  border-bottom: 1px solid var(--border-color);
+  padding: 8px 20px 0 20px;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  z-index: 999;
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.tab-btn:hover {
+  color: var(--text-main);
+}
+
+.tab-btn.active {
+  color: var(--primary-dark);
+  border-bottom-color: var(--primary-dark);
+  background: var(--surface-color);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+/* 次級條件篩選與搜尋列 */
 .filter-bar {
   background: var(--surface-color);
   padding: 10px 20px;
@@ -102,7 +143,7 @@ body {
   flex-wrap: wrap;
   align-items: center;
   gap: 12px;
-  z-index: 999;
+  z-index: 998;
 }
 
 .search-box {
@@ -284,6 +325,7 @@ body {
   white-space: nowrap;
 }
 
+/* 分類標籤多樣色彩 */
 .category-全素 {
   background: #d1fae5;
   color: #065f46;
@@ -297,6 +339,16 @@ body {
 .category-蔬食友善 {
   background: #e0f2fe;
   color: #0369a1;
+}
+
+.category-景點 {
+  background: #ede9fe;
+  color: #5b21b6;
+}
+
+.category-咖啡廳 {
+  background: #fef3c7;
+  color: #b45309;
 }
 
 .card-info-item {
@@ -378,6 +430,16 @@ body {
   color: white;
 }
 
+.pin-景點 {
+  background: var(--spot-color);
+  color: white;
+}
+
+.pin-咖啡廳 {
+  background: var(--cafe-color);
+  color: white;
+}
+
 /* 詳情彈出視窗 (Leaflet Popup) */
 .leaflet-popup-content-wrapper {
   border-radius: var(--radius-lg) !important;
@@ -414,6 +476,7 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
+  flex-wrap: wrap;
 }
 
 .popup-desc {
