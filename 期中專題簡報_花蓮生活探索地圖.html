@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>花蓮生活探索地圖 - 期中簡報投影片</title>
+  <style>
+    @page {
+      size: 16in 9in landscape;
+      margin: 0;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Microsoft JhengHei", sans-serif;
+      background: #0f172a;
+      color: #334155;
+    }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      max-width: 1600px;
+      max-height: 900px;
+      margin: 0 auto 30px auto;
+      background: #ffffff;
+      padding: 60px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      page-break-after: always;
+    }
+    /* 封面 */
+    .slide-title-bg {
+      background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
+      color: #ffffff;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 6px 18px;
+      border-radius: 9999px;
+      font-size: 18px;
+      margin-bottom: 24px;
+      letter-spacing: 1px;
+    }
+    .hero-title {
+      font-size: 58px;
+      font-weight: 800;
+      margin-bottom: 18px;
+      letter-spacing: -1px;
+    }
+    .hero-subtitle {
+      font-size: 26px;
+      color: #a7f3d0;
+      font-weight: 400;
+      margin-bottom: 36px;
+    }
+    .hero-meta {
+      font-size: 18px;
+      color: #ecfdf5;
+      line-height: 1.8;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: 24px;
+      max-width: 700px;
+    }
+
+    /* 內頁 Header */
+    .slide-header {
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 16px;
+    }
+    .slide-header h2 {
+      font-size: 34px;
+      font-weight: 700;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .slide-header p {
+      font-size: 18px;
+      color: #64748b;
+      margin-top: 4px;
+    }
+
+    /* 內頁內容 */
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin: 30px 0;
+      flex: 1;
+    }
+    .content-grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 24px;
+      margin: 30px 0;
+      flex: 1;
+    }
+    .card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 24px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card-highlight {
+      background: #ecfdf5;
+      border-color: #a7f3d0;
+    }
+    .card-purple {
+      background: #f5f3ff;
+      border-color: #ddd6fe;
+    }
+    .card-amber {
+      background: #fffbeb;
+      border-color: #fde68a;
+    }
+    .card h3 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card p, .card li {
+      font-size: 17px;
+      color: #475569;
+      line-height: 1.6;
+    }
+    .card ul {
+      padding-left: 20px;
+    }
+
+    /* 90秒步驟卡片 */
+    .step-box {
+      background: #ffffff;
+      border: 2px solid #10b981;
+      border-radius: 12px;
+      padding: 20px 24px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    }
+    .step-badge {
+      display: inline-block;
+      background: #10b981;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      margin-bottom: 8px;
+    }
+    .step-box h4 {
+      font-size: 20px;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+    .step-box p {
+      font-size: 16px;
+      color: #475569;
+      line-height: 1.5;
+    }
+
+    /* Footer */
+    .slide-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 14px;
+      font-size: 14px;
+      color: #94a3b8;
+    }
+    .tag-pill {
+      background: #f1f5f9;
+      padding: 3px 10px;
+      border-radius: 6px;
+      color: #475569;
+      font-weight: 600;
+    }
+
+    @media print {
+      body {
+        background: none;
+      }
+      .slide {
+        margin: 0;
+        box-shadow: none;
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 第 1 頁：封面 -->
+  <section class="slide slide-title-bg">
+    <div>
+      <span class="hero-badge">期中專案展示 · 90秒實機演示</span>
+      <h1 class="hero-title">花蓮生活探索地圖</h1>
+      <h2 class="hero-subtitle">Hualien Living Map ── 蔬食美饌 · 精選景點 · 質感咖啡館指南</h2>
+      <div class="hero-meta">
+        <div><strong>專題核心</strong>：輕量化互動式 Web App（100% 開源無金鑰 · 零安裝雙擊即跑）</div>
+        <div><strong>收錄熱點</strong>：50 處花蓮在地實名核實現役地點（30 家蔬食 + 10 大景點 + 10 家咖啡館）</div>
+        <div><strong>技術選型</strong>：HTML5 / CSS3 / Vanilla JS / Leaflet.js / Esri 街道圖資</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 第 2 頁：痛點與目標族群 -->
+  <section class="slide">
+    <div class="slide-header">
+      <h2>🎯 為什麼做？解決什麼問題？</h2>
+      <p>Problem Statement & Target Audience · 打造一站式花蓮綠色生活指南</p>
+    </div>
+    <div class="content-grid">
+      <div class="card card-highlight">
+        <h3>🚨 現有痛點 (Pain Points)</h3>
+        <ul>
+          <li><strong>蔬食飲食分類混雜</strong>：主流地圖將「純素」、「蛋奶素」與「葷素共食」混淆，素食者需反覆致電確認。</li>
+          <li><strong>資訊零散割裂</strong>：傳統美食地圖缺乏必訪文化景點與休憩咖啡廳的橫向串連。</li>
+          <li><strong>幽靈店家困擾</strong>：網路舊名單常充斥已停業或轉型店家，容易撲空。</li>
+          <li><strong>資安與維護門檻</strong>：商業地圖 API 申請繁瑣、計費昂貴且有金鑰洩漏風險。</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>👥 目標受眾 (Target Audience)</h3>
+        <ul>
+          <li><strong>花蓮在地居民與蔬食族群</strong>：快速掌握花蓮市、吉安等區域安心用餐新選擇。</li>
+          <li><strong>大專院校師生</strong>：東華大學志學商圈、慈濟建國校區周邊平價美食與自習咖啡空間。</li>
+          <li><strong>自由行深度旅遊觀光客</strong>：跨越新城、壽豐、秀林與鳳林，無縫串聯山海自然與人文名店。</li>
+          <li><strong>重視永續低碳的生活推廣者</strong>：鼓勵大眾實踐減碳飲食與在地慢活步調。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <span>花蓮生活探索地圖 · 期中報告簡報</span>
+      <span class="tag-pill">2 / 5 頁</span>
+    </div>
+  </section>
+
+  <!-- 第 3 頁：三大主題架構與嚴謹資料 -->
+  <section class="slide">
+    <div class="slide-header">
+      <h2>🧩 核心架構：三大主題與 50 處現役資料</h2>
+      <p>Data Verification · 2026 最新官方資訊與實地核實，排除停業幽靈店家</p>
+    </div>
+    <div class="content-grid-3">
+      <div class="card card-highlight">
+        <h3>🌱 蔬食美饌 (30 家)</h3>
+        <ul>
+          <li><strong>全素/純素 (16家)</strong>：蝸牛蔬食Buffet、植地佛陀碗、明園黃金脆皮煎餃、宜蘭水煎包、東華阿宏素食、新城織娘之家無菜單定食。</li>
+          <li><strong>蛋奶素 (4家)</strong>：Piatto+菜老宅義式、青田の蔬食、草緣齋手工披薩。</li>
+          <li><strong>蔬食友善 (10家)</strong>：時光1939有機早午餐、櫻之田野蓮花野菜鍋吃到飽、好佳小吃(獨立素食鍋具)、鳳林游翁臭豆腐(純素醬汁)。</li>
+        </ul>
+      </div>
+      <div class="card card-purple">
+        <h3>🏛️ 精選景點 (10 處)</h3>
+        <ul>
+          <li><strong>市區歷史人文</strong>：將軍府1936日式宿舍群、松園別館(2025重啟獲觀光百大亮點)、花蓮文創園區舊酒廠、東大門國際觀光夜市。</li>
+          <li><strong>古蹟與自然山海</strong>：吉安慶修院(三級古蹟)、新城七星潭月牙卵石海灣、壽豐鯉魚潭、雲山水落羽松夢幻湖。</li>
+          <li><strong>蘇花前哨亮點</strong>：秀林台泥DAKA開放生態園區、崇德瑩農場(台版紐西蘭)。</li>
+        </ul>
+      </div>
+      <div class="card card-amber">
+        <h3>☕ 質感咖啡館 (10 家)</h3>
+        <ul>
+          <li><strong>老宅文青聚落</strong>：浮室純白老宅不限時、Giocare樹下手沖與柴燒陶器、Caffe Fiore珈琲花乾燥花貓咪、KŌHI宅深夜榻榻米。</li>
+          <li><strong>烘焙與古蹟空間</strong>：Stroll散步咖啡人氣肉桂捲、SENSES極簡自家烘焙、咖逼小売所(縣定古蹟檢察長宿舍柴犬點心)、森山舍林業老舍。</li>
+          <li><strong>山海人文特色</strong>：新城練習曲書店(只借不賣書香咖啡)、壽豐海碉堡(海景露台)。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <span>花蓮生活探索地圖 · 期中報告簡報</span>
+      <span class="tag-pill">3 / 5 頁</span>
+    </div>
+  </section>
+
+  <!-- 第 4 頁：90 秒實機演示劇本 -->
+  <section class="slide">
+    <div class="slide-header">
+      <h2>⏱️ 90 秒現場展示腳本：打開什麼、做什麼、看到什麼</h2>
+      <p>Live Demonstration Workflow · 嚴格對照評分標準，節奏流暢展示核心價值</p>
+    </div>
+    <div class="content-grid-3">
+      <div class="step-box">
+        <span class="step-badge">00 ~ 20 秒 · 打開什麼</span>
+        <h4>🖥️ 啟動與破題</h4>
+        <p><strong>展示操作</strong>：瀏覽器秒開地圖 Web App。<br><br>
+        <strong>口述重點</strong>：「打開花蓮生活探索地圖，全原生前端打造、完全零金鑰、零授權費！畫面上清楚標註花蓮全區 50 處精選蔬食、景點與咖啡廳。」</p>
+      </div>
+      <div class="step-box" style="border-color:#3b82f6;">
+        <span class="step-badge" style="background:#3b82f6;">20 ~ 55 秒 · 做什麼</span>
+        <h4>⚡ 互動篩選與檢索</h4>
+        <p><strong>展示操作</strong>：<br>
+        1. 點擊「🏛️ 精選景點」即時聚焦歷史地標。<br>
+        2. 點選「🌱 蔬食美饌」並細篩「全素/純素」。<br>
+        3. 下拉選「壽豐鄉」自動定位東華大學與鯉魚潭。<br>
+        4. 搜尋框輸入「肉桂捲」秒級查出名店。</p>
+      </div>
+      <div class="step-box" style="border-color:#8b5cf6;">
+        <span class="step-badge" style="background:#8b5cf6;">55 ~ 90 秒 · 看到什麼</span>
+        <h4>🧭 成果反饋與行動外連</h4>
+        <p><strong>展示操作</strong>：點擊標記平滑飛入，彈出詳細資訊卡。<br><br>
+        <strong>口述重點</strong>：「彈出營業時段、門票、特色，點擊『導航前往』一鍵連動 Google Maps 規劃路線！90 秒解決花蓮探索痛點，謝謝大家！」</p>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <span>花蓮生活探索地圖 · 期中報告簡報</span>
+      <span class="tag-pill">4 / 5 頁</span>
+    </div>
+  </section>
+
+  <!-- 第 5 頁：技術亮點與未來展望 -->
+  <section class="slide">
+    <div class="slide-header">
+      <h2>🚀 技術亮點、測試成果與下一步</h2>
+      <p>Technical Highlights, Testing & Next Steps · 扎實落地與持續演進</p>
+    </div>
+    <div class="content-grid">
+      <div class="card card-highlight">
+        <h3>⚙️ 技術亮點與測試成果</h3>
+        <ul>
+          <li><strong>100% 零商業金鑰</strong>：採用 Esri 街道圖與高解析衛星空照圖，無 API 費用、無額度上限、杜絕資安外洩。</li>
+          <li><strong>極致輕量與零依賴</strong>：首頁載入小於 0.3 秒，免安裝 Python 或 Node.js，任何設備雙擊 `index.html` 即可運行。</li>
+          <li><strong>雙向連動架構</strong>：左側卡片與地圖 Pin 雙向聚焦（FlyTo 動態位移、平滑滾動）。</li>
+          <li><strong>全平臺適配</strong>：支援電腦寬螢幕雙欄與手機端自適應抽屜介面；已部署 GitHub Pages 免費線上即時體驗。</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>🔮 未來發展規劃 (Next Steps)</h3>
+        <ul>
+          <li><strong>自由行多點行程自動規劃</strong>：支援使用者一鍵將想去的地點加入清單，演算法自動串聯最佳路線。</li>
+          <li><strong>GPS 即時定位與距離排序</strong>：整合 HTML5 Geolocation API，自動計算距離當前位置最近的據點。</li>
+          <li><strong>PWA 離線快取技術</strong>：引入 Service Worker，將地圖底圖快取至手機端，即便行經太魯閣山區或蘇花公路亦可離線查閱。</li>
+          <li><strong>小農與在地店家線上回報</strong>：打造社群協同投稿機制，促進花蓮在地綠色經濟共好循環。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <span>花蓮生活探索地圖 · 期中報告簡報</span>
+      <span class="tag-pill">5 / 5 頁</span>
+    </div>
+  </section>
+
+</body>
+</html>
